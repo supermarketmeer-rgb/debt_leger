@@ -1,0 +1,338 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  .font-amiri {
+    font-family: 'Amiri', serif;
+  }
+
+  .font-cairo {
+    font-family: 'Cairo', sans-serif;
+  }
+}
+
+/* تحويل كافة الخطوط العريضة (Bold / Black / Semibold) إلى خط عادي (Normal) عبر جميع الشاشات */
+:root {
+  --font-weight-bold: 400;
+  --font-weight-black: 400;
+  --font-weight-extrabold: 400;
+  --font-weight-semibold: 400;
+}
+
+.font-bold,
+.font-black,
+.font-extrabold,
+.font-semibold {
+  font-weight: 400 !important;
+}
+
+b, strong, th, h1, h2, h3, h4, h5, h6 {
+  font-weight: 400 !important;
+}
+
+/* 3D Book Cover & Opening Perspective */
+.perspective-2500 {
+  perspective: 2500px;
+}
+
+/* ضمان بقاء خلفية الحقول داكنة دائماً ومنع المتصفح من تغييرها للأزرق الفاتح/الأبيض عند التعبئة التلقائية */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #0c0a09 inset !important;
+  box-shadow: 0 0 0 1000px #0c0a09 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+  color: #ffffff !important;
+  transition: background-color 50000s ease-in-out 0s;
+}
+
+.dark-always-input {
+  background-color: #0c0a09 !important;
+  -webkit-box-shadow: 0 0 0 1000px #0c0a09 inset !important;
+  box-shadow: 0 0 0 1000px #0c0a09 inset !important;
+  color: #ffffff !important;
+}
+
+.dark-always-input:-webkit-autofill,
+.dark-always-input:-webkit-autofill:hover,
+.dark-always-input:-webkit-autofill:focus,
+.dark-always-input:-webkit-autofill:active {
+  background-color: #0c0a09 !important;
+  -webkit-box-shadow: 0 0 0 1000px #0c0a09 inset !important;
+  box-shadow: 0 0 0 1000px #0c0a09 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* خط الـ placeholder باهت وغير ساطع */
+.dark-always-input::placeholder,
+.dark-always-input::-webkit-input-placeholder,
+.dark-always-input::-moz-placeholder,
+.dark-always-input:-ms-input-placeholder {
+  color: #78716c !important;
+  -webkit-text-fill-color: #78716c !important;
+  opacity: 0.55 !important;
+  font-weight: 400 !important;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Notebook / Ledger Paper Textures */
+.ledger-paper {
+  background-color: #fbf9f3;
+  background-image: 
+    linear-gradient(#e6decb 1.2px, transparent 1.2px),
+    linear-gradient(90deg, rgba(195, 180, 150, 0.55) 1.2px, transparent 1.2px);
+  background-size: 100% 28px, 28px 100%;
+}
+
+.ledger-paper-subtle {
+  background-color: #faf7ef;
+  background-image: linear-gradient(#e2d9bd 1.2px, transparent 1.2px);
+  background-size: 100% 32px;
+}
+
+/* Leather Texture Effect */
+.leather-pattern {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 0),
+                    radial-gradient(rgba(0, 0, 0, 0.22) 1px, transparent 0);
+  background-position: 0 0, 10px 10px;
+  background-size: 20px 20px;
+}
+
+/* Gold Foil Stamping */
+.gold-emboss {
+  color: #dfb15b;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8), 0 0 10px rgba(223, 177, 91, 0.4);
+}
+
+.gold-border {
+  border-color: #bfa15f;
+  box-shadow: inset 0 0 10px rgba(191, 161, 95, 0.3), 0 0 8px rgba(191, 161, 95, 0.2);
+}
+
+/* Realistic Book Stack & Page Edges Depth */
+.book-edge-stack-left {
+  box-shadow: 
+    -4px 0 0 #f0ead8,
+    -8px 0 0 #e4dcbe,
+    -12px 0 0 #d7cca7,
+    -16px 0 0 #c7bb92,
+    -22px 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.book-edge-stack-right {
+  box-shadow: 
+    4px 0 0 #f0ead8,
+    8px 0 0 #e4dcbe,
+    12px 0 0 #d7cca7,
+    16px 0 0 #c7bb92,
+    22px 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Central Gutter Crease Shadow */
+.book-spine-crease {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.02) 0%,
+    rgba(0, 0, 0, 0.08) 35%,
+    rgba(0, 0, 0, 0.25) 49%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.25) 51%,
+    rgba(0, 0, 0, 0.08) 65%,
+    rgba(0, 0, 0, 0.02) 100%
+  );
+}
+
+/* Realistic 3D Page Turn & Paper Folding Animation (طوي صفحات السجلات الطبيعية) */
+@keyframes realisticPageFold {
+  0% {
+    opacity: 0.2;
+    transform-origin: right center;
+    transform: perspective(2600px) rotateY(-28deg) translateZ(30px) scale(0.985) skewY(1deg);
+    filter: brightness(0.9) drop-shadow(-20px 10px 30px rgba(0, 0, 0, 0.45));
+  }
+  35% {
+    opacity: 0.85;
+    transform-origin: right center;
+    transform: perspective(2600px) rotateY(-14deg) translateZ(16px) scale(0.992) skewY(0.5deg);
+    filter: brightness(0.95) drop-shadow(-12px 6px 20px rgba(0, 0, 0, 0.28));
+  }
+  70% {
+    opacity: 0.98;
+    transform-origin: right center;
+    transform: perspective(2600px) rotateY(-3deg) translateZ(4px) scale(0.998) skewY(0.1deg);
+    filter: brightness(0.99) drop-shadow(-4px 2px 8px rgba(0, 0, 0, 0.12));
+  }
+  100% {
+    opacity: 1;
+    transform-origin: right center;
+    transform: perspective(2600px) rotateY(0deg) translateZ(0) scale(1) skewY(0deg);
+    filter: brightness(1) drop-shadow(0 0 0 transparent);
+  }
+}
+
+/* Moving 3D Turning Page Leaf (ورقة التقليب المتحركة ثلاثية الأبعاد) */
+@keyframes paperLeafTurnOver {
+  0% {
+    transform-origin: right center;
+    transform: perspective(2600px) rotateY(0deg) translateZ(5px);
+    opacity: 0.95;
+    box-shadow: -15px 0 25px rgba(0, 0, 0, 0.35);
+  }
+  50% {
+    transform-origin: right center;
+    transform: perspective(2600px) rotateY(-75deg) translateZ(45px) skewY(2deg);
+    opacity: 0.85;
+    box-shadow: -35px 15px 45px rgba(0, 0, 0, 0.5);
+    background-color: #f3ecda;
+  }
+  100% {
+    transform-origin: right center;
+    transform: perspective(2600px) rotateY(-170deg) translateZ(5px);
+    opacity: 0;
+    box-shadow: 0 0 0 transparent;
+  }
+}
+
+/* Light Sheen Sweep as paper lands flat */
+@keyframes paperSheenSweep {
+  0% {
+    opacity: 0.4;
+    transform: translateX(100%);
+  }
+  50% {
+    opacity: 0.2;
+    transform: translateX(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+.animate-page-turn {
+  animation: realisticPageFold 0.52s cubic-bezier(0.2, 0.8, 0.25, 1) forwards;
+  will-change: transform, opacity, filter;
+  transform-style: preserve-3d;
+}
+
+/* Moving 3D Turning Page Leaf - Reverse (ورقة التقليب بالاتجاه المعاكس) */
+@keyframes paperLeafTurnOverReverse {
+  0% {
+    transform-origin: left center;
+    transform: perspective(2600px) rotateY(0deg) translateZ(5px);
+    opacity: 0.95;
+    box-shadow: 15px 0 25px rgba(0, 0, 0, 0.35);
+  }
+  50% {
+    transform-origin: left center;
+    transform: perspective(2600px) rotateY(75deg) translateZ(45px) skewY(-2deg);
+    opacity: 0.85;
+    box-shadow: 35px 15px 45px rgba(0, 0, 0, 0.5);
+    background-color: #f3ecda;
+  }
+  100% {
+    transform-origin: left center;
+    transform: perspective(2600px) rotateY(170deg) translateZ(5px);
+    opacity: 0;
+    box-shadow: 0 0 0 transparent;
+  }
+}
+
+.animate-leaf-flip {
+  animation: paperLeafTurnOver 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.animate-leaf-flip-reverse {
+  animation: paperLeafTurnOverReverse 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+.animate-sheen {
+  animation: paperSheenSweep 0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
+}
+
+/* Realistic Book Tabs (ألسنة الفهرس) */
+.book-tab-active {
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Hide scrollbars cleanly */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Print Styles */
+@media print {
+  @page {
+    size: landscape;
+    margin: 8mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Hide all buttons, inputs, selects, and icon svgs completely in print */
+  button,
+  input,
+  select,
+  .lucide {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+  
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  /* Keep table cells from wrapping awkwardly in print */
+  .excel-cell-nowrap {
+    white-space: nowrap !important;
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "دفتر الديون الذكي - Smart Debt Ledger",
+  "description": "تطبيق ويب متكامل واحترافي لإدارة سجلات ديون الزبائن والموردين مع محاكاة فتح دفتر حقيقي ثلاثي الأبعاد، كشوفات حساب دقيقة، وتقارير ونسخ احتياطي ودعم الربط والتثبيت.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
